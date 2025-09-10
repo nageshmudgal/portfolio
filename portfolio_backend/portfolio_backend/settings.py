@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -50,7 +51,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'corsheaders.middleware.CorsMiddleware',
 ]
 # CORS_ALLOWED_ORIGINS = [
 #     "http://localhost:3000",  # React dev server
@@ -130,12 +130,10 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# INSTALLED_APPS += ['corsheaders']
-# MIDDLEWARE = ['corsheaders.middleware.CorsMiddleware'] + MIDDLEWARE
-# CORS_ALLOW_ALL_ORIGINS = True  # or specify allowed origins
+CORS_ALLOW_ALL_ORIGINS = True  # or specify allowed origins
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # React dev server
-    "https://your-frontend-domain.com",  # Production frontend
-    "https://sturdy-space-giggle-wjpjgxvrg939r-3000.app.github.dev",
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000",  # React dev server
+#     "https://your-frontend-domain.com",  # Production frontend
+#     "https://sturdy-space-giggle-wjpjgxvrg939r-3000.app.github.dev",
+# ]
