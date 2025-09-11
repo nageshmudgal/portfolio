@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const ProjectList = () => {
   const [projects, setProjects] = useState([]);
-  const projectsUrl = 'https://glowing-robot-g6jxrrvw45g3q77-8000.app.github.dev/api/projects/'
+  const projectsUrl = 'https://portfolio-3-86qh.onrender.com/api/projects/'
   // projectsUrl = 'http://localhost:8000/api/projects/'
 
   useEffect(() => {
