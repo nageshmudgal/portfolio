@@ -137,3 +137,8 @@ CORS_ALLOW_ALL_ORIGINS = True  # or specify allowed origins
 #     "https://your-frontend-domain.com",  # Production frontend
 #     "https://sturdy-space-giggle-wjpjgxvrg939r-3000.app.github.dev",
 # ]
+
+import os
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
