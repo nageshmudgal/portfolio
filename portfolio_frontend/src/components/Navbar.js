@@ -35,6 +35,7 @@ const styles = {
   },
   navItem: {
     fontWeight: 'bold',
+    fontSize: '26px'
   }
 };
 
