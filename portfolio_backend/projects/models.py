@@ -10,3 +10,13 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+
+class Experience(models.Model):
+    company = models.CharField(max_length=100)
+    role = models.CharField(max_length=100)
+    start_date = models.DateField()
+    end_date = models.DateField(null=True, blank=True)  # null if currently working
+    description = models.TextField(blank=True)
+
+    def __str__(self):
+        return f"{self.role} at {self.company}"
