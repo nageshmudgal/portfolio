@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: #da7902ff; /* orange-grey background */
+  color: white;
+  min-height: 90vh;
+}
+
+.text-container {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.image-container {
+  flex: 1;
+  text-align: right;
+}
+
+.image {
+  max-width: 500px;
+  border-radius: 50%;
+  border: 6px solid #00ffff;
+  box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+}
+
