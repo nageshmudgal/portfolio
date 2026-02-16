@@ -1,42 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './Navbar.css';
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav style={styles.navbar}>
-      <ul style={styles.navList}>
-        <li style={styles.navItem}>Home</li>
-        <li style={styles.navItem}>Projects</li>
-        <li style={styles.navItem}>Contact</li>
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="nav-brand">NM</div>
+      <ul className="nav-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   );
-};
-
-const styles = {
-  navbar: {
-    position: 'fixed',   // fixes navbar at top of viewport
-    top: 0,
-    left: 0,
-    right: 0,
-    display: 'flex',
-    justifyContent: 'flex-end',
-    padding: '1rem 2rem',
-    backgroundColor: 'transparent',  // fully transparent
-    zIndex: 1000, // keep it on top
-  },
-  navList: {
-    listStyle: 'none',
-    display: 'flex',
-    gap: '2rem',
-    margin: 0,
-    padding: 0,
-    color: 'white', // or whatever color suits your background
-    cursor: 'pointer',
-  },
-  navItem: {
-    fontWeight: 'bold',
-    fontSize: '26px'
-  }
 };
 
 export default Navbar;

@@ -4,7 +4,7 @@ import './ProjectList.css'; // Create this CSS file for styling
 
 const ProjectList = () => {
   const [projects, setProjects] = useState([]);
-  const projectsUrl = 'https://portfolio-3-86qh.onrender.com/api/projects/';
+  const projectsUrl = 'http://127.0.0.1:8000/api/projects/';
 
   useEffect(() => {
     axios.get(projectsUrl)
